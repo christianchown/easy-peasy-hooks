@@ -7,9 +7,14 @@ import {
   Reducer,
   select,
   Select,
-  useAction
+  useAction,
+  Store
 } from "easy-peasy";
 import { Action as ReduxAction } from "redux";
+
+export interface ICounterActions {
+  type: "INCREMENT";
+}
 export interface ITodoValues {
   items: string[];
 }
@@ -46,13 +51,11 @@ class TodoService {
 
 const todoService: TodoService = new TodoService();
 
-// tslint:disable-next-line:typedef
-const store = createStore<IModel>({
+const store: Store<IModel> = createStore<IModel>({
   todos: {
     items: [],
     saveTodo: effect(async (dispatch, payload, getState) => {
-      // tslint:disable-next-line:typedef
-      const saved = await todoService.save(payload);
+      const saved: string = await todoService.save(payload);
       dispatch.todos.todoSaved(saved); // 👍 correctly typed
 
       // dispatch.todos.todoSaved(1);
@@ -84,7 +87,7 @@ const store = createStore<IModel>({
     })
   },
 
-  counter: reducer((state, action: ReduxAction) => {
+  counter: reducer((state = 0, action: ReduxAction) => {
     // 👍 correctly typed
     switch (action.type) {
       case "INCREMENT":
