@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@types/react-dom": "^16.0.11",
+    "easy-peasy": "christianchown/easy-peasy.git#0a09daca",
+    "parcel-bundler": "^1.10.3",
+    "prop-types": "15.6.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.1"
+  },
+  "scripts": {
+    "start": "parcel ./index.html"
+  }
+}
