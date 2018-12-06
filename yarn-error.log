@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @types/redux-first-history
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
   C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\PuTTY\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\cmder;C:\Program Files\nodejs\;C:\Program Files (x86)\MAVProxy;D:\CMake\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\Aykut\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\Aykut\AppData\Roaming\npm;C:\Users\Aykut\AppData\Local\GitHubDesktop\bin;C:\Users\Aykut\.dotnet\tools;C:\Users\Aykut\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Aykut\AppData\Local\Yarn\bin
@@ -14,17 +14,12 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fredux-first-history: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:65003:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:129018:22)
-      at Request.emit (events.js:182:13)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:129990:10)
-      at Request.emit (events.js:182:13)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:129912:12)
-      at Object.onceWrapper (events.js:273:13)
-      at IncomingMessage.emit (events.js:187:15)
-      at endReadableNT (_stream_readable.js:1081:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  SyntaxError: D:\hooks\package.json: Unexpected token / in JSON at position 1051
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1631:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
 
 npm manifest: 
   {
@@ -35,8 +30,9 @@ npm manifest:
       "@types/react-dom": "^16.0.11",
       "@types/react-redux": "^6.0.10",
       "@types/react-router": "^4.4.1",
+      "@types/react-router-dom": "^4.3.1",
       "connected-react-router": "^5.0.1",
-      "easy-peasy": "christianchown/easy-peasy.git#0a09daca",
+      "easy-peasy": "aalpgiray/easy-peasy.git#typescript-typings",
       "history": "^4.7.2",
       "npm-link-shared": "^0.5.6",
       "prop-types": "15.6.2",
@@ -47,7 +43,7 @@ npm manifest:
       "react-router": "^4.3.1",
       "react-router-dom": "^4.3.1",
       "redux": "^4.0.1",
-      "redux-first-history": "^4.0.0-alpha.6",
+      "redux-first-history": "aalpgiray/redux-first-history.git",
       "tslib": "^1.9.3"
     },
     "devDependencies": {
@@ -56,10 +52,12 @@ npm manifest:
       "typescript": "^3.2.1"
     },
     "scripts": {
-      "start": "parcel ./index.html"
+      "start": "parcel ./index.html",
+      "postinstall": "cd node_modules/easy-peasy && yarn"
     },
     "alias": {
-      "react": "./node_modules/react"
+      "react": "./node_modules/react",
+      // "easy-peasy": "D:/git/easy-peasy"
     },
     "babel": {
       "plugins": [
@@ -121,7 +119,16 @@ Lockfile:
       "@types/react" "*"
       redux "^4.0.0"
   
-  "@types/react-router@^4.4.1":
+  "@types/react-router-dom@^4.3.1":
+    version "4.3.1"
+    resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.3.1.tgz#71fe2918f8f60474a891520def40a63997dafe04"
+    integrity sha512-GbztJAScOmQ/7RsQfO4cd55RuH1W4g6V1gDW3j4riLlt+8yxYLqqsiMzmyuXBLzdFmDtX/uU2Bpcm0cmudv44A==
+    dependencies:
+      "@types/history" "*"
+      "@types/react" "*"
+      "@types/react-router" "*"
+  
+  "@types/react-router@*", "@types/react-router@^4.4.1":
     version "4.4.1"
     resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.4.1.tgz#c875dfd0b6fe00efa463eb8e5de8b5f74644b3f5"
     integrity sha512-CtQfdcXyMye3vflnQQ2sHU832iDJRoAr4P+7f964KlLYupXU1I5crP1+d/WnCMo6mmtjBjqQvxrtbAbodqerMA==
@@ -603,9 +610,9 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
     integrity sha1-ZyIm3HTI95mtNTB9+TaroRrNYBg=
   
-  easy-peasy@christianchown/easy-peasy.git#0a09daca:
+  easy-peasy@aalpgiray/easy-peasy.git#typescript-typings:
     version "1.6.1"
-    resolved "https://codeload.github.com/christianchown/easy-peasy/tar.gz/0a09dacae996853f290528f9f1ede509bab3016c"
+    resolved "https://codeload.github.com/aalpgiray/easy-peasy/tar.gz/3d5113465f2d424e46808ffb0e389fdb769e7278"
     dependencies:
       immer "^1.7.4"
       memoize-one "^4.0.3"
@@ -1548,10 +1555,9 @@ Lockfile:
       micromatch "^3.1.10"
       readable-stream "^2.0.2"
   
-  redux-first-history@^4.0.0-alpha.6:
-    version "4.0.0-alpha.6"
-    resolved "https://registry.yarnpkg.com/redux-first-history/-/redux-first-history-4.0.0-alpha.6.tgz#5153c91685fd2cabf868b4d2175faca3a8abeab7"
-    integrity sha512-CVflkJCOy5JH/woFNqW9CuV4cBsDxeHhqTM7P64Qsp+xuMOzsTupgyYtuYxjT+MpGiUC5T48gZQ7N3fBQXhubg==
+  redux-first-history@aalpgiray/redux-first-history.git:
+    version "4.0.0-alpha.7"
+    resolved "https://codeload.github.com/aalpgiray/redux-first-history/tar.gz/ed8d0a402275ea465ad3f4b32a3c238889cd89ee"
   
   redux-thunk@^2.3.0:
     version "2.3.0"

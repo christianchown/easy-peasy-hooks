@@ -1,0 +1,21 @@
+.navbar {
+  text-align: center;
+
+  .navlink {
+    font-size: 28px;
+    font-style: italic;
+    color: rgb(73, 65, 52);
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 900;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &.active {
+      text-decoration: underline;
+      color: rgb(100, 88, 70);
+    }
+  }
+}

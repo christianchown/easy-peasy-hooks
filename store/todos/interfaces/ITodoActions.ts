@@ -4,6 +4,7 @@ import { ITodo } from "./ITodo";
 import { ITodoValuesAndSelectors } from "./ITodoValuesAndSelectors";
 export interface ITodoActions {
   saveTodo: Effect<IModel, ITodo>;
+  clearDoneTodos: Action<ITodoValuesAndSelectors>;
   toggleTodo: Action<ITodoValuesAndSelectors, number>;
   todoSaved: Action<ITodoValuesAndSelectors, ITodo>;
   lengthOfItems: Select<ITodoValuesAndSelectors, number>;

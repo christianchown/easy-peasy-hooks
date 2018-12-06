@@ -1,13 +1,13 @@
-import { useAction, useStore } from "easy-peasy";
+import { Dispatch, ModelValues, useAction, useStore } from "easy-peasy";
 import React, { Fragment } from "react";
 import { IModel } from "../../store/model";
 import { ITodo, ITodoValuesAndSelectors } from "../../store/todos/interfaces";
 
 export const TodoList = () => {
-  const toggleTodo = useAction<IModel, (index: number) => void>(
-    (dispatch) => dispatch.todos.toggleTodo,
+  const toggleTodo = useAction(
+    (dispatch: Dispatch<IModel>) => dispatch.todos.toggleTodo,
   );
-  const todos = useStore<IModel, ITodo[]>((state) => state.todos.items);
+  const todos = useStore((state: ModelValues<IModel>) => state.todos.items);
 
   return (
     <Fragment>

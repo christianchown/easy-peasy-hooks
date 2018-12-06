@@ -1,4 +1,11 @@
-import { createStore, Reducer, reducer, Store } from "easy-peasy";
+import {
+  createStore,
+  ModelActions,
+  ModelValues,
+  Reducer,
+  reducer,
+  Store,
+} from "easy-peasy";
 
 import counter from "./counter/counter.reducer";
 import { routerMiddleware, routerReducer } from "./router/router";
@@ -12,7 +19,7 @@ export interface IModel {
   router: Reducer<any>;
 }
 
-const store: Store<IModel> = createStore<IModel>(
+const store = createStore<IModel>(
   {
     router: reducer(routerReducer),
     todos,
