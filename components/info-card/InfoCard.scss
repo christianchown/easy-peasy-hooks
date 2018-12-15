@@ -1,0 +1,29 @@
+.info-card {
+  width: 400px !important;
+  padding: 0 !important;
+  margin: 10px !important;
+  overflow: hidden;
+
+  .header {
+    // background: rgb(2, 132, 219) !important;
+    width: 100%;
+    color: white !important;
+    padding: 20px 20px !important;
+    margin: 0 !important;
+
+    &.inline-header {
+      display: flex !important;
+      background: white !important;
+      color: rgb(32, 32, 32) !important;
+
+      .sub.header {
+        padding: 0 !important;
+        background: white !important;
+        position: relative;
+        margin-left: 5px !important;
+        color: rgb(32, 32, 32) !important;
+        bottom: -10px;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { Dispatch, useAction } from "easy-peasy";
 import React from "react";
-import { IModel } from "../../store/model";
+import store, { IModel } from "../../store/model";
 import { ITodo } from "../../store/todos/interfaces";
 export const TodoForm = () => {
   const [newTodo, setTodo] = React.useState("");

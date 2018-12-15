@@ -1,19 +1,10 @@
+import "./rhlConfig";
+import "./rhlConfig";
+
 import React from "react";
 import { render } from "react-dom";
-
-import { AppContainer } from "react-hot-loader";
 import App from "./App";
 
-import { setConfig } from "react-hot-loader";
+import "semantic-ui-css/semantic.min.css";
 
-setConfig({
-  ignoreSFC: true, // RHL will be __completely__ disabled for SFC
-  pureRender: true, // RHL will not change render method
-});
-
-render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
-  document.getElementById("root"),
-);
+render(<App />, document.getElementById("root"));

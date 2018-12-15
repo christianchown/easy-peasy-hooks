@@ -1,6 +1,6 @@
 import { Dispatch, ModelValues, useAction, useStore } from "easy-peasy";
 import React from "react";
-import { IModel } from "../../store/model";
+import store, { IModel } from "../../store/model";
 
 import "../../main.scss";
 import { CounterActions } from "../../store/counter/actions";
@@ -9,9 +9,15 @@ export default () => {
   const counter: number = useStore(
     (store: ModelValues<IModel>) => store.counter,
   );
-  const count = useAction((dispatch: Dispatch<CounterActions>) => () =>
-    dispatch(CounterActions.icrement()),
-  );
+
+  const count = () =>
+    store.dispatch<CounterActions>({
+      type: "INCREMENT",
+    });
+
+  // const count = useAction((dispatch: Dispatch<CounterActions>) => () =>
+  //   dispatch(CounterActions.icrement()),
+  // );
 
   return (
     <div>
